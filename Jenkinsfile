@@ -3,6 +3,9 @@ node{
     git 'https://github.com/vinayaksaini/jenkins_SpringBoot_demo_war'
     }
     stage('Build'){
-    sh 'mvn package'
+        //get maven home
+        def mvnHome = tool name: 'Maven', type: 'maven'
+        sh "${mvnHome}/bin/mvn package"
+        //sh 'mvn package'
     }
    }
