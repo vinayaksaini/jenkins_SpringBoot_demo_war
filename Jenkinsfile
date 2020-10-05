@@ -5,7 +5,8 @@ node{
     stage('Build'){
         //get maven home
         def mvnHome = tool name: 'Maven', type: 'maven'
-        bat "${mvnHome}/bin/mvn package"
+        sh "${mvnHome}/bin/mvn package"
+        //bat "${mvnHome}/bin/mvn package"
         //sh 'mvn package'
     }
    }
